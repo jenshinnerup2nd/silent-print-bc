@@ -1,6 +1,6 @@
 {
-  "id": "00000000-0000-0000-0000-000000000000",
-  "name": "APPNAME",
+  "id": "c3012fc7-8cd7-4637-81e8-117b9f727638",
+  "name": "Silent Print BC",
   "publisher": "Vibrant Color Development",
   "version": "1.0.0.0",
   "brief": "",
@@ -16,8 +16,8 @@
   "application": "26.0.0.0",
   "idRanges": [
     {
-      "from": RANGE_FROM,
-      "to": RANGE_TO
+      "from": 73000,
+      "to": 73049
     }
   ],
   "target": "Cloud",
