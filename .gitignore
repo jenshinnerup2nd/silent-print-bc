@@ -1,0 +1,19 @@
+# AL compiler output
+*.app
+
+# Symbols - downloaded locally, not committed
+.alpackages/
+
+# VS Code local settings (keep launch.json)
+.vscode/settings.json
+
+# AL-Go generated
+.buildartifacts/
+.output/
+
+# Translation generated files
+*.g.xlf
+TranslationFile/
+
+# Temp
+rad/

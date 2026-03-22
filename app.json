@@ -1,0 +1,28 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "name": "APPNAME",
+  "publisher": "Vibrant Color Development",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "26.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": RANGE_FROM,
+      "to": RANGE_TO
+    }
+  ],
+  "target": "Cloud",
+  "runtime": "15.0",
+  "features": [
+    "TranslationFile"
+  ]
+}

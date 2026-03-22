@@ -1,0 +1,11 @@
+{
+  "type": "PTE",
+  "country": "dk",
+  "repoVersion": "1.0",
+  "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main",
+  "enablePerTenantExtensionCop": true,
+  "enableAppSourceCop": false,
+  "artifact": "//26.0.0.0/dk/latest",
+  "companyName": "Vibrant Color Development",
+  "versioningStrategy": 0
+}

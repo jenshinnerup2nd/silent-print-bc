@@ -1,0 +1,56 @@
+name: CI/CD
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '**.md'
+      - '.github/workflows/*.yaml'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - '.github/workflows/*.yaml'
+
+defaults:
+  run:
+    shell: powershell
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  Initialization:
+    runs-on: [ windows-latest ]
+    outputs:
+      telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
+      settings: ${{ steps.ReadSettings.outputs.SettingsJson }}
+      githubRunner: ${{ steps.ReadSettings.outputs.GitHubRunnerJson }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize the workflow
+        id: init
+        uses: microsoft/AL-Go-Actions/WorkflowInitialize@main
+        with:
+          shell: powershell
+
+      - name: Read settings
+        id: ReadSettings
+        uses: microsoft/AL-Go-Actions/ReadSettings@main
+        with:
+          shell: powershell
+
+  Build:
+    needs: [ Initialization ]
+    runs-on: ${{ fromJson(needs.Initialization.outputs.githubRunner) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: microsoft/AL-Go-Actions/RunPipeline@main
+        with:
+          shell: powershell
+          settingsJson: ${{ needs.Initialization.outputs.settings }}
